@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>用canvas画直线</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+	*{margin:0px;padding:0px;}
+	#canvas{
+		background-color:#CCCCCC;
+		width:500px;
+		height:300px;
+	}
+</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>   <!--定义画布-->
+
+<script>
+	var canvas = document.getElementById('canvas'); //得到画布
+	var ctx = canvas.getContext('2d');  //创建一幅2d场景
+	ctx.beginPath();     //声明要开始按路径画线了
+	ctx.moveTo(0,0);     //声明起始点
+	ctx.lineTo(400,150);  //结束点
+	ctx.lineWidth = 1;     //线的宽度
+	ctx.strokeStyle = '#FF0000';   //线的颜色
+	ctx.stroke();		//画线结束
+</script>
+</body>
+</html>
