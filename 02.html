@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>用canvas画正弦曲线</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style>
+	
+	#canvas{
+		background-color:#CCCCCC;
+		/*width:800px;
+		height:300px;*/
+	}
+</style>
+</head>
+<body>
+	<canvas id="canvas" width="800px" height="300px"></canvas>   <!--定义画布-->
+
+<script>
+        var canvas = document.getElementById('canvas'); // 得到画布
+        var ctx = canvas.getContext('2d'); // 创建一幅2d场景
+        ctx.beginPath(); // 声明要开始按路径画线了
+        
+        ctx.moveTo(0,150); // 声明起始点
+        ctx.lineTo(800 , 150); // 结束点
+        ctx.lineWidth = 1; // 线的宽度
+        ctx.strokeStyle = '#FF0000';
+        ctx.stroke();
+
+
+        var cx = 0 , cy = 150;
+        for(var i=0; i<800; i+=2) {
+            ctx.lineTo(cx+i ,  Math.sin((8*Math.PI/800)*i)*50 + cy);
+        }
+
+        ctx.strokeStyle = '#0000FF';
+        ctx.stroke();
+
+    </script>
+</body>
+</html>
